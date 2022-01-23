@@ -9,7 +9,7 @@
 
 ## Discussion
 Note: this works locally with python 3.8.2 and numpy 1.21.2 and gets an average error of 252 with the provided scenarios. 
-Skydio….py has the MPC controller and the script running the scenarios. 
+mainwithBAS.py has the MPC controller and the script running the scenarios. 
 helper_functions has the simulator and plotter functions for MPC
 ## Subject Following 
 I decided to focus on following the subject first, going with classic DDP. I predicted the subject's location by storing its past 10 positions, finding the average center of curvature, and extrapolating on that curve using its average velocity. Before there are enough points to determine a center of curvature, the predicted subject trajectory is linear. This is done in calcTargetTrajInFrontStraight and calcTargetTrajInFrontCurved. I tuned the horizon to about 80.
